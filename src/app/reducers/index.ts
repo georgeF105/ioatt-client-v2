@@ -7,12 +7,14 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
-export interface State {
+import { State as DevicesState, reducer as devicesReducer } from '../devices/devices.reducer';
 
+export interface State {
+  devices: DevicesState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-
+  devices: devicesReducer
 };
 
 
