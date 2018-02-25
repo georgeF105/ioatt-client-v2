@@ -8,7 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-
+import { ShellModule } from './shell/shell.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    ShellModule
   ],
   providers: [],
   bootstrap: [AppComponent]
