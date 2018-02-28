@@ -1,11 +1,20 @@
 import { Action } from '@ngrx/store';
+import { Device } from '@ioatt/types';
 
 export enum DevicesActionTypes {
-  DevicesAction = '[Devices] Action'
+  GetDevicesAction = '[Devices] get devices',
+  GetDevicesSuccessAction = '[Devices] get devices success'
 }
 
-export class Devices implements Action {
-  readonly type = DevicesActionTypes.DevicesAction;
+export class GetDevices implements Action {
+  readonly type = DevicesActionTypes.GetDevicesAction;
 }
 
-export type DevicesActions = Devices;
+export class GetDevicesSuccess implements Action {
+  readonly type = DevicesActionTypes.GetDevicesSuccessAction;
+  constructor (
+    public devices: Array<Device>
+  ) { }
+}
+
+export type DevicesActions = GetDevices | GetDevicesSuccess;

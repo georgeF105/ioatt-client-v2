@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { State } from './devices.reducer';
+import { GetDevices } from './devices.actions';
 
 @Component({
   selector: 'app-devices',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _store: Store<State>
+  ) { }
 
   ngOnInit() {
+    console.log('here');
+    this._store.dispatch(new GetDevices());
   }
 
 }
