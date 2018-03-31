@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@ioatt/client",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
-    "@ioatt/types": "file:../types",
+    "@ioatt/types": "^1.0.0",
     "@ngrx/effects": "^5.1.0",
     "@ngrx/store": "^5.1.0",
     "@ngrx/store-devtools": "^5.1.0",
