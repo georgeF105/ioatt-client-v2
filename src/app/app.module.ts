@@ -11,6 +11,9 @@ import { environment } from '../environments/environment';
 import { ShellModule } from './shell/shell.module';
 import { EffectsModule } from '@ngrx/effects';
 
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseToStoreModule } from './core/firebase-to-store/firebase-to-store.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +24,9 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    ShellModule
+    ShellModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    FirebaseToStoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
