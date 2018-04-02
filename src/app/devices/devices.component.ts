@@ -18,6 +18,7 @@ export class DevicesComponent implements OnInit {
   ngOnInit() {
     console.log('here');
     this._firebaseToStoreService.getItems('devices').subscribe();
+    this._firebaseToStoreService.getItems('sensors').subscribe();
   }
 
 }
