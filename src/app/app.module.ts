@@ -13,6 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseToStoreModule } from './core/firebase-to-store/firebase-to-store.module';
+import { UserModule } from './core/user/user.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FirebaseToStoreModule } from './core/firebase-to-store/firebase-to-stor
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     ShellModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FirebaseToStoreModule
+    FirebaseToStoreModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
