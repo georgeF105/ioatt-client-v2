@@ -7,14 +7,21 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
-import { State as DevicesState, reducer as devicesReducer } from '../devices/devices.reducer';
+import {
+  State as FirebaseState,
+  reducer as firebaseReducer
+} from '../core/firebase-to-store/firebase-to-store.reducer';
+import { State as UserState, reducer as UserReducer } from '../core/user/user.reducer';
+import { DBSchema } from '@ioatt/types';
 
 export interface State {
-  devices: DevicesState;
+  user: UserState;
+  firebaseState: FirebaseState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  devices: devicesReducer
+  firebaseState: firebaseReducer,
+  user: UserReducer
 };
 
 
